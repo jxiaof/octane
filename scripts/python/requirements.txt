@@ -1,0 +1,14 @@
+pynvml==8.0.0
+pycuda==2023.1.1
+torch==2.0.1
+tensorflow==2.12.0
+psutil==5.9.5
+py-cpuinfo==9.0.0
+GPUtil==1.4.0
+speedtest-cli==2.1.3
+requests==2.31.0
+ping3==3.1.0
+stress-ng==0.14.06
+sysbench==1.0.20
+iperf3==3.12.0
+PyYAML==6.0

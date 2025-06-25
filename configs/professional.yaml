@@ -1,0 +1,34 @@
+professional:
+  scenarios:
+    gaming:
+      enabled: true
+      recommended_settings: "Ultra/Max settings"
+      performance_metrics:
+        fps_1080p: 165
+        fps_1440p: 118
+        fps_4k: 67
+
+    ai:
+      enabled: true
+      recommended_models:
+        - "stable-diffusion"
+        - "llama-7b"
+        - "bert-large"
+      performance_metrics:
+        training_performance: "exceptional"
+        inference_performance: "outstanding"
+
+    server:
+      enabled: true
+      recommended_settings: "High concurrency"
+      performance_metrics:
+        concurrent_users_estimate: 5000
+        database_performance: "very_good"
+
+    workstation:
+      enabled: true
+      recommended_settings: "Professional workloads"
+      performance_metrics:
+        video_editing: "4k_60fps"
+        cad_performance: "excellent"
+        compilation_speed: "very_fast"

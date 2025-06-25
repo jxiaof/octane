@@ -1,0 +1,40 @@
+name: Build Octane
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: '1.21'
+
+      - name: Install dependencies
+        run: |
+          go mod tidy
+
+      - name: Build the application
+        run: |
+          go build -o octane ./main.go
+
+      - name: Run tests
+        run: |
+          go test ./... -v
+
+      - name: Archive build artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: octane-build
+          path: octane

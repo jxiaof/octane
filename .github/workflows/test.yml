@@ -1,0 +1,43 @@
+name: Test Workflow
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: '1.21'
+
+      - name: Install dependencies
+        run: go mod tidy
+
+      - name: Run tests
+        run: go test ./... -v
+
+      - name: Run Python tests
+        run: |
+          python3 -m pip install -r scripts/python/requirements.txt
+          python3 scripts/python/system_info.py
+          python3 scripts/python/cpu_test.py
+          python3 scripts/python/memory_test.py
+          python3 scripts/python/storage_test.py
+          python3 scripts/python/gpu_test.py
+          python3 scripts/python/network_test.py
+          python3 scripts/python/professional_test.py
+
+      - name: Upload test results
+        if: success()
+        run: echo "All tests passed!"

@@ -1,0 +1,26 @@
+global:
+  log_level: "info"
+  output_format: "yaml"
+  progress_bar: true
+  temp_dir: "/tmp/octane"
+  theme: "racing"
+
+octane:
+  rating_system: "ron"
+  scale_max: 100
+  scale_min: 70
+  precision: 1
+
+upload:
+  enabled: false
+  server_url: "https://api.octane-bench.com"
+  api_key: ""
+  anonymous: true
+  auto_upload: false
+  tags: []
+
+tests:
+  boost_mode: true
+  fuel_analysis: true
+  temperature_monitoring: true
+  power_monitoring: true

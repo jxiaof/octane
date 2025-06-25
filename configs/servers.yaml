@@ -1,0 +1,15 @@
+servers:
+  - name: "Primary Server"
+    url: "https://api.octane-bench.com"
+    token: "your_api_token_here"
+    enable: true
+
+  - name: "Backup Server"
+    url: "https://backup.octane-bench.com"
+    token: "your_backup_token_here"
+    enable: false
+
+  - name: "Test Server"
+    url: "https://test.octane-bench.com"
+    token: "your_test_token_here"
+    enable: true
